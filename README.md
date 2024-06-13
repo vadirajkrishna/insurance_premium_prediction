@@ -20,7 +20,7 @@ export AWS_SECRET_ACCESS_KEY=<aws_secret_access_key>
 
 python demo.py
 ```
-**Important!!: These exports are ONLY while running locally. For the deployment the Git hub secrets are used to store the keys.**
+**Important!!: These exports are ONLY while running locally. For the deployment the Git hub secrets are used to store the secrets.**
 
 ## Predicting the results locally
 To launch the application use
