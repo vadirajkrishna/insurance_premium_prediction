@@ -10,4 +10,10 @@ pip install -r requirements.txt
 ## Dataset
 The dataset can be downloaded from [kaggle](https://www.kaggle.com/datasets/noordeen/insurance-premium-prediction)
 
-
+## Running the code localy
+To test the code locally use below command. This basically trains the model and pushes the model to the AWS S3 bucket (only if the current model is better than the one already present in the S3). Each of these runs produces the complete logs for ingestion (under **Logs** folder), validation and transformation. Each run produces artifacts such as train and test splits, preprocessor object, trained model in the respective paths under **Artifacts** folder. For more details please refer the HLD and LLD.
+```
+export MONGODB_URL="<mongo_db_connection_string>"
+export AWS_ACCESS_KEY="<aws_access_key>
+export AWS_SECRET_ACCESS_KEY=<aws_secret_access_key>
+```
