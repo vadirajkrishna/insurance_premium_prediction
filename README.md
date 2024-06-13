@@ -5,6 +5,7 @@ Create a virtual environment and install the dependencies from the **requirement
 >Note: replace \<venv\> with your environment name
 ```
 conda create -n <venv> python=3.8 -y
+conda activate <venv>
 pip install -r requirements.txt
 ```
 ## Dataset
