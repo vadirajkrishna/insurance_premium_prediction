@@ -16,4 +16,11 @@ To test the code locally use below command. This basically trains the model and 
 export MONGODB_URL="<mongo_db_connection_string>"
 export AWS_ACCESS_KEY="<aws_access_key>
 export AWS_SECRET_ACCESS_KEY=<aws_secret_access_key>
+
+python demo.py
 ```
+**Important!!: These exports are ONLY while running locally. For the deployment the Git hub secrets are used to store the keys.**
+## CI/CD and deploying into AWS
+1. Docker is used to containarize the application. AWS ECR is used for storing the docker image.
+2. For CI/CD the Github actions are used. Two jobs are configured one for deploying the updated docker image to the AWS ECR (CI) and another for deploying (CD) the docker image of the application on AWS EC2
+
