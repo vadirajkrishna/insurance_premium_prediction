@@ -142,7 +142,7 @@ class TrainPipeline:
             model_pusher_artifact = model_pusher.initiate_model_pusher()
             return model_pusher_artifact
         except Exception as e:
-            raise InsPremException(e, sys)
+            raise USvisaException(e, sys)
 
 
     

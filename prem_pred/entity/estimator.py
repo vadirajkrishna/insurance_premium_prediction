@@ -39,8 +39,7 @@ class PremPredModel:
 
         try:
             logging.info("Using the trained model to get predictions")
-            print(dataframe) # for debugging
-            logging.info("dataframe for transform", dataframe) # for debugging
+
             transformed_feature = self.preprocessing_object.transform(dataframe)
 
             logging.info("Used the trained model to get predictions")

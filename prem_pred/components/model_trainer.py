@@ -13,7 +13,7 @@ from prem_pred.exception import InsPremException
 from prem_pred.logger import logging
 from prem_pred.utils.main_utils import load_numpy_array_data, read_yaml_file, load_object, save_object
 from prem_pred.entity.config_entity import ModelTrainerConfig
-from prem_pred.entity.artifact_entity import DataTransformationArtifact, ModelTrainerArtifact, ClassificationMetricArtifact, RegressionMetricArtifact
+from prem_pred.entity.artifact_entity import DataTransformationArtifact, ModelTrainerArtifact, RegressionMetricArtifact
 from prem_pred.entity.estimator import PremPredModel
 
 
@@ -56,11 +56,12 @@ class ModelTrainer:
             # metric_artifact = ClassificationMetricArtifact(f1_score=f1, precision_score=precision, recall_score=recall)
             r2score = r2_score(y_test, y_pred)
             metric_artifact = RegressionMetricArtifact(r2_score=r2score)
+            
 
 
             
-            # return best_model_detail, metric_artifact
             return best_model_detail, metric_artifact
+            #return best_model_detail, r2score
         
         except Exception as e:
             raise InsPremException(e, sys) from e

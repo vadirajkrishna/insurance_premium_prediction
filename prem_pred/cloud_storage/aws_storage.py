@@ -3,7 +3,7 @@ from prem_pred.configuration.aws_connection import S3Client
 from io import StringIO
 from typing import Union,List
 import os,sys
-from us_visa.logger import logging
+from prem_pred.logger import logging
 from mypy_boto3_s3.service_resource import Bucket
 from prem_pred.exception import InsPremException
 from botocore.exceptions import ClientError
