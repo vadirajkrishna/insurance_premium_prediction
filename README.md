@@ -15,7 +15,7 @@ The dataset can be downloaded from [kaggle](https://www.kaggle.com/datasets/noor
 To test the code locally use below commands. This basically trains the model and pushes the model to the AWS S3 bucket (only if the current model is better than the one already present in the S3). The run triggers the training pipeline Data Ingestion-->Data Validation-->Data Transformation-->Model building-->Model Validation-->Model pusher. Each of these runs produces the logs for each pipeline step (under **Logs** folder). Each run produces artifacts such as train and test splits, preprocessor object, trained model in the respective paths under **Artifacts** folder. For more details please refer the HLD and LLD.
 ```
 export MONGODB_URL="<mongo_db_connection_string>"
-export AWS_ACCESS_KEY="<aws_access_key>
+export AWS_ACCESS_KEY_ID="<aws_access_key>
 export AWS_SECRET_ACCESS_KEY=<aws_secret_access_key>
 
 python demo.py
