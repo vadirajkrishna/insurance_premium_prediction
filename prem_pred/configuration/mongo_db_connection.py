@@ -26,14 +26,16 @@ class MongoDBClient:
                 mongo_db_url = os.getenv(MONGODB_URL_KEY) #Read the CS
                 if mongo_db_url is None:
                     raise Exception(f"Environment key: {MONGODB_URL_KEY} is not set.")
-                MongoDBClient.client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
+                mongo_db_full_url = "mongodb+srv://"+MONGODB_URL_KEY+"@cluster0.47dro4s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+                # MongoDBClient.client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
+                MongoDBClient.client = pymongo.MongoClient(mongo_db_full_url, tlsCAFile=ca)
             self.client = MongoDBClient.client
             self.database = self.client[database_name]
             self.database_name = database_name
-            logging.info(f"MongoDB URL: {mongo_db_url}") # my comments for debug
-            logging.info(f"client: {self.client}") # my comments for debug
-            logging.info(f"database: {self.database}") # my comments for debug
-            logging.info(f"database name: {self.database_name}") # my comments for debug
+            #logging.info(f"MongoDB URL: {mongo_db_url}") # my comments for debug
+            #logging.info(f"client: {self.client}") # my comments for debug
+            #logging.info(f"database: {self.database}") # my comments for debug
+            #logging.info(f"database name: {self.database_name}") # my comments for debug
             logging.info("MongoDB connection succesfull")
         except Exception as e:
             raise InsPremException(e,sys)
