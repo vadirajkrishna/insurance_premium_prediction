@@ -30,10 +30,10 @@ class MongoDBClient:
                     raise Exception(f"Environment key: {MONGODB_URL_KEY} is not set.")
 
                 mongo_db_full_url = f"mongodb+srv://{mongo_db_url}@cluster0.47dro4s.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-                raise Exception(mongo_db_full_url)
-                # conv_to_bytes = bytes(mongo_db_full_url, 'utf-8')
-                # encode = base64.b64encode(conv_to_bytes)
-                # decode = base64.b64decode(encode).decode()
+                #raise Exception(mongo_db_full_url)
+                conv_to_bytes = bytes(mongo_db_full_url, 'utf-8')
+                encode = base64.b64encode(conv_to_bytes)
+                decode = base64.b64decode(encode).decode()
             
                 # MongoDBClient.client = pymongo.MongoClient(mongo_db_url, tlsCAFile=ca)
                 MongoDBClient.client = pymongo.MongoClient(decode, tlsCAFile=ca)
